@@ -5,7 +5,7 @@ phases:
   pre_build:
     commands:
       - mvn clean install
-      - echo Logging in to Amazon ECR...
+      - echo Logging into Amazon ECR...
       - aws --version
       - $(aws ecr get-login --region $AWS_DEFAULT_REGION --no-include-email)
       - REPOSITORY_URI=173245618849.dkr.ecr.us-east-1.amazonaws.com/maths-ecr
