@@ -18,6 +18,8 @@ public class CalculationController {
 
 	@Autowired
 	Calculations calculations;
+	
+	
 
 	@GetMapping("/add")
 	public ResponseEntity<Response> getAddition(@RequestBody Request req) {
