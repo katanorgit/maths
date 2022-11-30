@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -21,7 +22,7 @@ public class CalculationController {
 	
 	
 
-	@GetMapping("/add")
+	@PostMapping("/add")
 	public ResponseEntity<Response> getAddition(@RequestBody Request req) {
 		int res = calculations.add(req.getA(), req.getB());
 		Response resp = new Response();
@@ -30,7 +31,7 @@ public class CalculationController {
 		return new ResponseEntity<Response>(resp, HttpStatus.OK);
 	}
 
-	@GetMapping("/sub")
+	@PostMapping("/sub")
 	public ResponseEntity<Response> getSubsraction(@RequestBody Request req) {
 		int res = calculations.sub(req.getA(), req.getB());
 		Response resp = new Response();
@@ -39,7 +40,7 @@ public class CalculationController {
 		return new ResponseEntity<Response>(resp, HttpStatus.OK);
 	}
 
-	@GetMapping("/mul")
+	@PostMapping("/mul")
 	public ResponseEntity<Response> getMultiplication(@RequestBody Request req) {
 		int res = calculations.mul(req.getA(), req.getB());
 		Response resp = new Response();
@@ -48,7 +49,7 @@ public class CalculationController {
 		return new ResponseEntity<Response>(resp, HttpStatus.OK);
 	}
 
-	@GetMapping("/div")
+	@PostMapping("/div")
 	public ResponseEntity<Response> getDivision(@RequestBody Request req) {
 		int res = calculations.div(req.getA(), req.getB());
 		Response resp = new Response();
