@@ -9,6 +9,6 @@ public class WelcomeController {
 
 	@GetMapping
 	public String welcometoCalService() {
-		return "welcome to calculator service!";
+		return "welcome to calculator service implementation!";
 	}
 }
